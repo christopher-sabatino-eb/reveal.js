@@ -16,8 +16,116 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Welcome!
+
+						WHAT:
+						==============================
+						Skynet Sprint 28
+						
+						EPIC: Portal Admin UI
+
+						PLAT-23: _Engineering Management - engineers on team_
+
+						_Atlas Infrastructure Viewer_
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## USE CASE:
+						As a manager, lead or admin:
+						- I need the ability to verify or plan for gitops changes to the "Atlas Infrastructure", 
+						- concerning my groups and members, 
+						- so that they have the correct access to our tenants and applications.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Acceptance Criteria:
+						for this slice of the Epic...
+						- retrieve a list of members that report to a manager.
+						- retrieve a list of groups that a manager is owner of.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## VALUE:
+						0. Enabling another pie piece for self-service.
+						1. Building up the first set of read-only capabilities planned for Atlas Admin UI.
+						2. A platform team proving-ground to develop, experience and improve upon the same DX as our colleagues working within the Atlas ecosystem.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## HOW:
+						From prototyping to live data for read-only use cases using: 
+						- Atlas "Admin UI Web API Services"
+						- Make a request to receive information about a tenant's Azure Active Directory
+						- GET information for teams, applications, users, and their access utilizing Microsoft Graph API
+						
+						** Dymyll's DEMO on the "Back End Admin UI data" will likely compliment and review in better depth.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## HIGHLIGHTS:
+						
+						- nested routes for viewer tabs
+						- “filter by” dropdown wired up
+						- retrieve a list of members that report to a manager
+						- retrieve a list of teams groups that a manager is owner of
+						- BONUS: retrieve a list of members on a group
+						- loaders for grid & filter list
+						- grid cell template for Owners data
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## NEXT:
+						- Auth stories to help facilitate displaying only what's relevant or authorized for the user to interact with.
+						- _plus..._
+
+						### PLAT-25:
+						- _Engineering Management - view my engineers_
+						### PLAT-428:
+						- _Team Registrations - verify create teams_
+						### PLAT-220:
+						- _Add documentation to Confluence: AAD administration workflow_
+
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Thanks for watching!
+						### All questions are welcome. 
+						Feel free to reach out to me or anyone on the team thru slack, email, etc.
+					</textarea>
+				</section>
+				<!--
+				<section data-markdown>
+					<textarea data-template>
+						```js [1-2|3|4]
+						let a = 1;
+						let b = 2;
+						let c = x => 1 + 2 + x;
+						c(3);
+						```
+					</textarea>
+				</section>
+				-->
+				<!-- 
+				<section data-markdown>
+					<textarea data-template>
+						## Slide 1
+						A paragraph with some text and a [link](http://hakim.se).
+						---
+						## Slide 2
+						---
+						## Slide 3
+					</textarea>
+				</section>
+				-->
 			</div>
 		</div>
 
