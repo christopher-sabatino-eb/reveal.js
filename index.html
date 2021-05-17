@@ -19,16 +19,17 @@
 				<section data-markdown>
 					<textarea data-template>
 						## Welcome!
-						Skynet Sprint 29
+						### Skynet Sprint 29
+						###### for _The Atlas Platform_ 
 
 						WHAT: <!-- .element: class="fragment" -->
 						==============================
 
 						EPIC PLAT-14: [Portal Admin UI] <!-- .element: class="fragment" -->
 
-						PLAT-834 => PLAT-25: [UI] Mock the data shape of: Plat-25 Engineering Management - view my engineers <!-- .element: class="fragment" -->
+						PLAT-834: [UI] Mock the data shape of: "PLAT-25 Engineering Management - view my engineers app access" <!-- .element: class="fragment" -->
 
-						_Atlas Infrastructure Viewer_ <!-- .element: class="fragment" -->
+						_@ Atlas Infrastructure Viewer_ <!-- .element: class="fragment" -->
 						
 					</textarea>
 				</section>
@@ -37,7 +38,7 @@
 						## USE CASE:
 						As a manager, lead or admin: <!-- .element: class="fragment" -->
 						- I need the ability to verify or plan for gitops changes to the "Atlas Infrastructure",  <!-- .element: class="fragment" -->
-						- concerning my groups and members,  <!-- .element: class="fragment" -->
+						- concerning my team's/group's members,  <!-- .element: class="fragment" -->
 						- so that they have the correct access to our tenants and applications. <!-- .element: class="fragment" -->
 					
 					</textarea>
@@ -45,45 +46,35 @@
 				<section data-markdown>
 					<textarea data-template>
 						## Acceptance Criteria:
-						for this slice of the Epic... <!-- .element: class="fragment" -->
-						- retrieve a list of members that report to a manager. <!-- .element: class="fragment" -->
-						- retrieve a list of groups that a manager is owner of. <!-- .element: class="fragment" -->
+						New for this slice of the Epic... <!-- .element: class="fragment" -->
+						- Mock the most helpful application access data, by member, filtered by manager, to help inform + shape data service contract & be able to implement what’s feasible.<!-- .element: class="fragment" -->
+						- per PLAT - 25 ACs: retrieve a manager's member's application access from TAT and EB AAD<!-- .element: class="fragment" -->
 					
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
 						## VALUE:
-						0. Enabling firsts of many pie pieces for self-service. <!-- .element: class="fragment" -->
-						1. Building up the first set of read-only capabilities planned for Atlas Admin UI. <!-- .element: class="fragment" -->
-						2. A platform team proving-ground to develop, experience and improve upon the same DX as our colleagues working within the Atlas ecosystem. <!-- .element: class="fragment" -->
+						Ability to verify or plan for gitops changes to the "Atlas Infrastructure", concerning team member's correct app access. <!-- .element: class="fragment" -->
 					
 					</textarea>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-visibility="hidden">
 					<textarea data-template>
 						## HOW:
 						From prototyping to live data for read-only use cases using:  <!-- .element: class="fragment" -->
 						- Atlas "Admin UI Web API Services" <!-- .element: class="fragment" -->
 						- Make a request to receive information about a tenant's Azure Active Directory <!-- .element: class="fragment" -->
 						- GET information for teams, applications, users, and their access utilizing Microsoft Graph API <!-- .element: class="fragment" -->
-						
-						** Dymyll's DEMO on the "Back End Admin UI data" will likely compliment and review in better depth. <!-- .element: class="fragment" -->
-						https://ebpp.atlassian.net/wiki/x/LIoBBw <!-- .element: class="fragment" -->
 					
 					</textarea>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-visibility="hidden">
 					<textarea data-template>
 						## HIGHLIGHTS:
-						
-						- nested routes for viewer tabs <!-- .element: class="fragment" -->
-						- “filter by” dropdown wired up <!-- .element: class="fragment" -->
 						- retrieve a list of members that report to a manager <!-- .element: class="fragment" -->
-						- retrieve a list of groups/teams that a manager is owner of <!-- .element: class="fragment" -->
-						- BONUS: retrieve a list of members on a group <!-- .element: class="fragment" -->
-						- loaders for grid & filter list <!-- .element: class="fragment" -->
-						- grid cell template for Owners data <!-- .element: class="fragment" -->
+						- retrieve member's application access from TAT and EB AAD <!-- .element: class="fragment" -->
+						- grid cell template for App Access data <!-- .element: class="fragment" -->
 					
 					</textarea>
 				</section>
@@ -91,33 +82,101 @@
 					<textarea data-template>
 						## UI DEMO:
 						# _GO!_ <!-- .element: class="fragment" -->
-						http://localhost:3003/ <!-- .element: class="fragment" -->
+						http://localhost:3000/ <!-- .element: class="fragment" -->
 
 						Dev: <!-- .element: class="fragment" -->
 						http://apollo-jupiter-atlas-dev.admin-dev.theatlastango.com.s3-website-us-west-2.amazonaws.com/ <!-- .element: class="fragment" -->
 					
 					</textarea>
 				</section>
+				<section data-background-iframe="http://localhost:3000/" data-background-interactive>
+
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## API DATA CODE:
+						
+						PROPOSED data formatting for member’s apps (and groups) access list from POC on PLAT-834: <!-- .element: class="fragment" -->
+						<pre> <!-- .element: class="fragment" -->
+							"appsaccesslist": {
+								artifactory: true,
+								atlassian: false,
+								awscloudwatch: true,
+								github: false,
+								jetbrains: true,
+								lucidchart: false,
+								nexus: true,
+								postman: false,
+								sonarqube: true,
+								vault: true,
+							...MORE APPS...
+							},
+						</pre>
+
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## API DATA CODE:
+						
+						…so that a member payload might look like… <!-- .element: class="fragment" -->
+						<pre> <!-- .element: class="fragment" -->
+						<small> <!-- .element: class="fragment" -->
+							[
+								{
+								"displayName": "Adam Allard",
+								"jobTitle": null,
+								"email": "Adam.Allard@employbridge.com",
+								"userId": "45e0d522-ec8b-4047-a640-759e70674125",
+								"userPrincipalName": "Adam.Allard_employbridge.com#EXT#@TheAtlasTango.onmicrosoft.com",
+								"appsaccesslist": {
+									artifactory: true,
+									atlassian: false,
+									awscloudwatch: true,
+									github: false,
+									jetbrains: true,
+									lucidchart: false,
+									nexus: true,
+									postman: false,
+									sonarqube: true,
+									vault: true,
+									...MORE APPS...
+									},
+								},
+								...MORE MEMBERS...
+							]
+						</small>
+						</pre>
+						<small>
+							(example from http://apollo-jupiter-atlas-dev-api.theatlastango.services/atlas-services-user-api/users): <!-- .element: class="fragment" -->
+						</small>
+					</textarea>
+				</section>
 				<section data-markdown>
 					<textarea data-template>
 						## NEXT:
-						- Auth stories to help display only relevant or authorized data for internal user to interact with. <!-- .element: class="fragment" -->
-						>>_plus..._ <!-- .element: class="fragment" -->
 						### PLAT-25: <!-- .element: class="fragment" -->
+						- Implement this into both front-end and back-end for Admin UI app <!-- .element: class="fragment" -->
 						- _Engineering Management - view my engineers_ <!-- .element: class="fragment" -->
-						### PLAT-428: <!-- .element: class="fragment" -->
-						- _Team Registrations - verify create teams_ <!-- .element: class="fragment" -->
-						### PLAT-220: <!-- .element: class="fragment" -->
-						- _Add documentation to Confluence: AAD administration workflow_ <!-- .element: class="fragment" -->
+						- _and view their application access in Atlas_ <!-- .element: class="fragment" -->
+
+						### Related: <!-- .element: class="fragment" -->
+						- scoping data retrieved to each user's authz <!-- .element: class="fragment" -->
 
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
 						## Thanks for watching!
-						### All questions are welcome. 
-						Feel free to reach out to me or anyone on the team thru slack, email, etc. 
-						
+						### All questions and comments are very welcome.
+
+						Please, feel free to reach out to me...
+						<br />
+						Dawn, DJ, Mark 
+						<br />
+						or anyone on the team thru slack, email, etc. 
+						<br />
+						<br />
 						employbridge.slack.com @ [#atlas](https://employbridge.slack.com/archives/C019PV72D26)
 						
 					</textarea>
