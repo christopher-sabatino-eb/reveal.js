@@ -19,51 +19,56 @@
 				<section data-markdown>
 					<textarea data-template>
 						## Welcome!
-						### Skynet Sprint 000 DEMO
+						### Skynet Sprint 32 DEMO
 						###### for _The Atlas Platform_ 
 
 						WHAT: <!-- .element: class="fragment" -->
 						==============================
 
-						EPIC PLAT-000: "EPIC_NAME" <!-- .element: class="fragment" -->
+						EPIC PLAT-1077: "Portal Admin 2.0" <!-- .element: class="fragment" -->
 
-						STORY PLAT-000: "STORY_NAME_OR_SHORT_DESC" <!-- .element: class="fragment" -->
+						STORY PLAT-849: "sorting grid columns" <!-- .element: class="fragment" -->
 						
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
 						## USE CASE:
-						"As_a_ROLE_FORMULA...": <!-- .element: class="fragment" -->
-						- I_WANT_A_REQUIREMENT_OR_ACTION_bullet, <!-- .element: class="fragment" -->
-						- WHEN_SOME_CONDITION_bullet,  <!-- .element: class="fragment" -->
-						- SO_THAT_OUTCOME_VALUE_bullet <!-- .element: class="fragment" -->
+						"As a user, while in admin ui > infrastructure viewer...": <!-- .element: class="fragment" -->
+						- I need to be able to sort on each column’s data, <!-- .element: class="fragment" -->
+						- so that I can find/compare properties I’m reviewing,  <!-- .element: class="fragment" -->
+						- because sorting on cell content, that is another rendered react component, needs alternative values. <!-- .element: class="fragment" -->
 					
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
 						## ACCEPTANCE CRITERIA:
-						- AC_bullet_1 <!-- .element: class="fragment" -->
-						- AC_bullet_2 <!-- .element: class="fragment" -->
-						- AC_bullet_3 <!-- .element: class="fragment" -->
+						- RESEARCH available/up-to-date approach (lib & grid is in alpha.)(see refs in story). <!-- .element: class="fragment" -->
+						- Implement the best sort fix/approach <!-- .element: class="fragment" -->
+						- Document so that future additions have a process to follow and be aware of <!-- .element: class="fragment" -->
+					
+					</textarea>GridColDef
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## VALUE:
+						User can be presented with helpful data cell level visuals, thru react ui components, <!-- .element: class="fragment" -->
+						
+						NOT just plain text data values, <!-- .element: class="fragment" -->
+						
+						AND be still able to sort them comparatively. <!-- .element: class="fragment" -->
 					
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						## VALUE:
-						SHORT_VALUE_description. <!-- .element: class="fragment" -->
-					
-					</textarea>
-				</section>
-				<section data-markdown data-visibility="hidden">
-					<textarea data-template>
 						## HOW:
-						SHORT_description_or_subheader.
-						- HOW_bullet_1 <!-- .element: class="fragment" -->
-						- HOW_bullet_2 <!-- .element: class="fragment" -->
-						- HOW_bullet_3 <!-- .element: class="fragment" -->
+						FROM Atlas UI App Shell's Material-UI library.
+
+						- SET UP and USE 'DataGrid' 'valueGetter' <!-- .element: class="fragment" -->
+						- SET UP and USE 'DataGrid' 'sortComparator' <!-- .element: class="fragment" -->
+						- within their 'GridColDef' for columns <!-- .element: class="fragment" -->
 					
 					</textarea>
 				</section>
@@ -83,15 +88,16 @@
 						# _GO!_ <!-- .element: class="fragment" -->
 						http://localhost:3000/ <!-- .element: class="fragment" -->
 
-						OR_ENV: <!-- .element: class="fragment" -->
-						http://apollo-jupiter-atlas-dev.admin-dev.theatlastango.com.s3-website-us-west-2.amazonaws.com/ <!-- .element: class="fragment" -->
+						### OR_ENV: <!-- .element: class="fragment" -->
+						https://admin-dev.theatlastango.com/viewer/groups <!-- .element: class="fragment" -->
+						https://admin-dev.theatlastango.com/viewer/members <!-- .element: class="fragment" -->
 					
 					</textarea>
 				</section>
-				<section data-background-iframe="https://d3js.org/" data-background-interactive>
+				<section data-background-iframe="https://d3js.org/" data-background-interactive data-visibility="hidden">
 					<!-- URL DISPLAYED -->
 				</section>
-				<section data-markdown>
+				<section data-markdown data-visibility="hidden">
 					<textarea data-template>
 						## NEXT:
 						### PLAT-000: <!-- .element: class="fragment" -->
@@ -112,7 +118,7 @@
 
 						Please, feel free to reach out to me...
 						<br />
-						Dawn, DJ, Mark, 
+						Dawn, DJ, Mark, Dave, Sinclair, Heliker...
 						<br />
 						or anyone on the team thru slack, email, etc. 
 						<br />
